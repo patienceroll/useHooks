@@ -22,7 +22,7 @@ function App() {
           </li>
         </div>
 
-        <div style={{ flex: 1, backgroundColor: "#ccc",padding:20 }}>
+        <div style={{ flex: 1, backgroundColor: "#eee",padding:20 }}>
           <Switch>
             <Route path="/use-anti-shake" component={useAntiShakeDemo} />
             <Route path="/use-count" component={useConutDemo} />

@@ -31,11 +31,14 @@ const useAntiShakeDemo = () => {
   return (
     <div>
       <div>
-        <span>状态：</span>
-        <span>{loading ? "执行中" : "未执行"}</span>
+        <span>是否在执行防抖函数：</span>
+        <span style={{ color: loading ? "green" : '#999' }}>
+          {loading ? "执行中" : "未执行"}
+        </span>
       </div>
+      <br />
       <div>
-        <span>忽略的定时器：</span>
+        <span>最近被忽略的一次函数调用：</span>
         <span style={{ color: "red" }}>
           第&nbsp;{typeof count === "number" ? count : "-"}&nbsp;次执行的操作
         </span>
