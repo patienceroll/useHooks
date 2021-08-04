@@ -8,7 +8,6 @@ const useAntiShakeDemo = () => {
 
   const randomTimeDo = useCallback(() => {
     const timeOut = createRandomInt([200, 1200]);
-    console.log(timeOut);
     return new Promise<number>((resolve) => {
       setTimeout(() => {
         resolve(timeOut);
