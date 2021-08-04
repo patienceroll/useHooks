@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 const useCount = (
   defaultCount: number,
@@ -9,48 +9,57 @@ const useCount = (
     during?: number;
     /** 结束时的值,默认为0 */
     end?: number;
-    /** #### 方向,默认减少
-     * 1. increase 增加
-     * 2. reduce 减少
-     * */
-    direction?: "increase" | "reduce";
   }
 ) => {
-  const {
-    step = 1,
-    during = 1000,
-    end = 0,
-    direction = "reduce",
-  } = options || {};
+  const { step = 1, during = 1000, end = 0 } = options || {};
 
   const Timer = useRef<NodeJS.Timeout>();
 
   const [count, setCount] = useState(defaultCount);
 
-  const startCount = useCallback(() => {
-    Timer.current = setTimeout(() => {
-      setCount((c) => {
-        if (direction === "reduce") {
-          if (c > end) return c - step;
-          return end;
-        } else {
-          if (c < end) return c + step;
-          return end;
+  const doCount = useCallback(
+    (c: number) => {
+      Timer.current = setTimeout(() => {
+        if (defaultCount > end) {
+          const next = c - step;
+          if (next > end) {
+            doCount(next);
+            setCount(next);
+          } else setCount(end);
         }
-      });
-    }, during);
-  }, [direction, during, end, step]);
+        if (defaultCount < end) {
+          const next = c + step;
+          if (next < end) {
+            doCount(next);
+            setCount(next);
+          } else setCount(end);
+        }
+      }, during);
+    },
+    [defaultCount, during, end, step]
+  );
 
   const stop = useCallback(() => {
     if (Timer.current) clearTimeout(Timer.current);
   }, []);
 
-  const restart = useCallback(() => {
+  const start = useCallback(() => {
+    if (Timer.current) clearTimeout(Timer.current);
     setCount(defaultCount);
-    startCount();
-  }, [defaultCount, startCount]);
+    doCount(defaultCount);
+  }, [defaultCount, doCount]);
 
-  return { count, stop, restart };
+  const goOn = useCallback(() => {
+    doCount(count);
+  }, [count, doCount]);
+
+  useEffect(() => {
+    return () => {
+      if (Timer.current) clearTimeout(Timer.current);
+    };
+  }, []);
+
+  return { count, stop, start, goOn };
 };
 
 export default useCount;
