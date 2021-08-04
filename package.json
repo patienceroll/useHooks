@@ -11,7 +11,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "commit": "npx git-cz",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
