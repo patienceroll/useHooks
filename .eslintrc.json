@@ -27,6 +27,7 @@
         ],
         "@typescript-eslint/explicit-module-boundary-types": [
             "off"
-        ]
+        ],
+        "no-inner-declarations": "off"
     }
 }
