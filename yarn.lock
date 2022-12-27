@@ -1245,6 +1245,13 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@^7.14.5":
+  version "7.20.7"
+  resolved "https://registry.npmmirror.com/@babel/runtime/-/runtime-7.20.7.tgz#fcb41a5a70550e04a7b708037c7c32f7f356d8fd"
+  integrity sha512-UF0tvkUtxwAgZ5W/KrkHf0Rn0fdnLDU9ScxBrEVNUprE/MzirjK4MJUX1/BVDv00Sv8cljtukVK1aky++X1SjQ==
+  dependencies:
+    regenerator-runtime "^0.13.11"
+
 "@babel/template@^7.10.4", "@babel/template@^7.12.13", "@babel/template@^7.3.3":
   version "7.12.13"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.12.13.tgz#530265be8a2589dbb37523844c5bcb55947fb327"
@@ -1771,6 +1778,35 @@
     "@svgr/plugin-jsx" "^5.5.0"
     "@svgr/plugin-svgo" "^5.5.0"
     loader-utils "^2.0.0"
+
+"@tarojs/api@3.5.10":
+  version "3.5.10"
+  resolved "https://registry.npmmirror.com/@tarojs/api/-/api-3.5.10.tgz#5291ba02dde0a8efa77df25bd98f6aeda322520c"
+  integrity sha512-xyAz6X3rwHlwfTXQaqDBisu+hfncZDbN7ViTPbdOwcbOt6crguvTpdycvxLqDQmXZj5XdKx8c+eGMBZ7Ya0x0g==
+  dependencies:
+    "@babel/runtime" "^7.14.5"
+    "@tarojs/runtime" "3.5.10"
+
+"@tarojs/runtime@3.5.10":
+  version "3.5.10"
+  resolved "https://registry.npmmirror.com/@tarojs/runtime/-/runtime-3.5.10.tgz#c1168ed1c4dc812cdcca850d36678a52c8f57c76"
+  integrity sha512-zlDVnFAf3sE8Vs1IyT1dpUDiFlmyWpGsAjjc2i7kn/A/1LC8q6NwbOeCb/DuF7B3aT3mVNXkw9NFsggi8yDI6A==
+  dependencies:
+    "@tarojs/shared" "3.5.10"
+    lodash-es "4.17.21"
+
+"@tarojs/shared@3.5.10":
+  version "3.5.10"
+  resolved "https://registry.npmmirror.com/@tarojs/shared/-/shared-3.5.10.tgz#b46630620fb2a82ccb3393b47f6d4f181dd43ed0"
+  integrity sha512-RN2e0fJfYEIofOnhha5CiGN4JtIS2ZU9lRuzASxb1BOdq/cxp+Om2rqATHL0D3Q1jBkf8xMVOZ77BoT0R/pIIw==
+
+"@tarojs/taro@^3.5.10":
+  version "3.5.10"
+  resolved "https://registry.npmmirror.com/@tarojs/taro/-/taro-3.5.10.tgz#004b161099b89e0ca29311394694784445934a40"
+  integrity sha512-WU+y8AAdbSZS9Oexz34irKkVxRkGkTpu70mDxYenfrrkgY6tOuQ/EmHavuxmQ7aEoFIjgm6s6pW91jd2AyOh+w==
+  dependencies:
+    "@tarojs/api" "3.5.10"
+    "@tarojs/runtime" "3.5.10"
 
 "@types/anymatch@*":
   version "1.3.1"
@@ -7412,6 +7448,11 @@ locate-path@^5.0.0:
   dependencies:
     p-locate "^4.1.0"
 
+lodash-es@4.17.21:
+  version "4.17.21"
+  resolved "https://registry.npmmirror.com/lodash-es/-/lodash-es-4.17.21.tgz#43e626c46e6591b7750beb2b50117390c609e3ee"
+  integrity sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==
+
 lodash._reinterpolate@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/lodash._reinterpolate/-/lodash._reinterpolate-3.0.0.tgz#0ccf2d89166af03b3663c796538b75ac6e114d9d"
@@ -10183,6 +10224,11 @@ regenerator-runtime@^0.11.0:
   version "0.11.1"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.11.1.tgz#be05ad7f9bf7d22e056f9726cee5017fbf19e2e9"
   integrity sha512-MguG95oij0fC3QV3URf4V2SDYGJhJnJGqvIIgdECeODCT98wSWDAJ94SSuVpYQUoTcGUIL6L4yNB7j1DFFHSBg==
+
+regenerator-runtime@^0.13.11:
+  version "0.13.11"
+  resolved "https://registry.npmmirror.com/regenerator-runtime/-/regenerator-runtime-0.13.11.tgz#f6dca3e7ceec20590d07ada785636a90cdca17f9"
+  integrity sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==
 
 regenerator-runtime@^0.13.4, regenerator-runtime@^0.13.7:
   version "0.13.7"
